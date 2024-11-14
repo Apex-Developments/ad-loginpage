@@ -14,7 +14,7 @@ A modern, animated account registration page featuring custom elements and more!
 - **Fade-in** animation on page load
 - Animated checkbox for **Terms & Conditions**
 - Fully designed to match the theme
-- Interactive example of the design [here]([https://apex-developments.github.io/ad-loginpage/register.html])
+- Interactive example of the design [here](https://apex-developments.github.io/ad-loginpage/login.html)
 
 ## Screenshots
 
