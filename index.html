@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container fade-in">
+        <div class="left-section">
+            <img src="assets/background-image.jpeg" alt="Background Image" class="background-image">
+            <div class="caption">
+                <h2>Example Text</h2>
+            </div>
+        </div>
+        <div class="right-section">
+            <h1>Create an account</h1>
+            <p>Already have an account? <a href="#">Log in</a></p>
+            <form action="register.php" method="POST">
+                <div class="input-group">
+                    <input type="text" placeholder="First Name" required>
+                    <input type="text" placeholder="Last Name" required>
+                </div>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Enter your password" required>
+                <div class="terms">
+                    <input type="checkbox" id="terms-checkbox" required>
+                    <label for="terms-checkbox">I agree to the <a href="#">Terms & Conditions</a></label>
+                </div>                               
+                <button type="submit" class="create-account-button">Create account</button>
+            </form>
+            <p class="or">Or register with</p>
+            <div class="google-signup">
+                <button class="google-button">
+                    <img src="assets/google.png" alt="Google Logo" class="google-logo"> Signup with Google
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

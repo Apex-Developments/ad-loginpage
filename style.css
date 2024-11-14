@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #3d3c42;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    width: 800px;
+    height: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #3d3c42;
+}
+
+.left-section {
+    position: relative;
+    width: 50%;
+    background-color: #25242a;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.caption h2 {
+    font-size: 18px;
+    color: #e4e4e7;
+}
+
+.right-section {
+    width: 50%;
+    background-color: #3d3c42;
+    padding: 40px;
+}
+
+.right-section h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.right-section p {
+    color: #b0b0b3;
+    margin-bottom: 20px;
+}
+
+.right-section a {
+    color: #8b85f5;
+    text-decoration: none;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #5a595f;
+    border-radius: 8px;
+    background: #25242a;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    outline: none;
+    border: 1px solid #8b85f5;
+    box-shadow: 0 0 5px rgba(139, 133, 245, 0.6);
+    transition: box-shadow 0.2s ease;
+}
+
+.create-account-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #7166d4;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.or {
+    text-align: center;
+    margin: 20px 0;
+    color: #b0b0b3;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+button:hover, input[type="submit"]:hover {
+    transform: scale(1.02);
+    background-color: #7166d4;
+    transition: all 0.2s ease;
+}
+
+button:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+}
+
+a:hover {
+    color: #b0a8ff;
+    text-decoration: underline;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #e4e4e7;
+    margin-bottom: 20px;
+}
+
+.terms input[type="checkbox"] {
+    display: none;
+}
+
+.terms label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.terms label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border: 1px solid #8b85f5;
+    background-color: #3d3c42;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.terms input[type="checkbox"]:checked + label::before {
+    background-color: #8b85f5;
+}
+
+.terms input[type="checkbox"]:checked + label::after {
+    content: "✓";
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.google-signup {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.google-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px;
+    background-color: #3d3c42;
+    border: 1px solid #5a595f;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.google-button:hover {
+    background-color: #7166d4;
+}
+
+.google-logo {
+    width: 25px;
+    height: 25px;
+    margin-right: 2px;
+}
