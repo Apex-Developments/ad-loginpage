@@ -1,7 +1,6 @@
 # Apex Developments Register Page
 
 A modern, animated account registration page featuring custom elements and more!
-View an interactive example of the design [here](https://apex-developments.github.io/ad-loginpage/)
 
 **Inspired by** [Usman A's design on Dribbble](https://dribbble.com/shots/24552589-Login-Sign-up-Dark-Mode-UI-UX-Design). If you're looking for professional website design, [check him out](https://dribbble.com/shots/24552589-Login-Sign-up-Dark-Mode-UI-UX-Design)!
 
@@ -12,6 +11,7 @@ View an interactive example of the design [here](https://apex-developments.githu
 - **Fade-in** animation on page load
 - Animated checkbox for **Terms & Conditions**
 - Fully designed to match the theme
+- Interactive example of the design [here](https://apex-developments.github.io/ad-loginpage/)
 
 ## Screenshots
 
