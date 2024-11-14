@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        function checkFormCompletion() {
+            const firstName = document.querySelector('input[placeholder="First Name"]').value;
+            const lastName = document.querySelector('input[placeholder="Last Name"]').value;
+            const email = document.querySelector('input[type="email"]').value;
+            const password = document.querySelector('input[type="password"]').value;
+            const termsCheckbox = document.getElementById("terms-checkbox").checked;
+            const submitButton = document.querySelector('.create-account-button');
+
+            if (firstName && lastName && email && password && termsCheckbox) {
+                submitButton.disabled = false;
+                submitButton.classList.remove("disabled");
+            } else {
+                submitButton.disabled = true;
+                submitButton.classList.add("disabled");
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container fade-in">
@@ -16,19 +34,19 @@
         </div>
         <div class="right-section">
             <h1>Create an account</h1>
-            <p>Already have an account? <a href="#">Log in</a></p>
-            <form action="register.php" method="POST">
+            <p>Already have an account? <a href="login.html">Log in</a></p>
+            <form oninput="checkFormCompletion()">
                 <div class="input-group">
                     <input type="text" placeholder="First Name" required>
                     <input type="text" placeholder="Last Name" required>
                 </div>
                 <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Enter your password" required>
+                <input type="password" placeholder="Password" required>
                 <div class="terms">
                     <input type="checkbox" id="terms-checkbox" required>
                     <label for="terms-checkbox">I agree to the <a href="#">Terms & Conditions</a></label>
                 </div>                               
-                <button type="submit" class="create-account-button">Create account</button>
+                <button type="button" class="create-account-button disabled" disabled>Create account</button>
             </form>
             <p class="or">Or register with</p>
             <div class="google-signup">
