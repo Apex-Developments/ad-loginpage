@@ -37,18 +37,6 @@ body {
     opacity: 0.8;
 }
 
-.back-button {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
 .caption {
     position: absolute;
     bottom: 20px;
@@ -84,7 +72,6 @@ body {
 .input-group {
     display: flex;
     gap: 10px;
-    margin-bottom: 15px;
 }
 
 input[type="text"],
@@ -229,4 +216,78 @@ a:hover {
     width: 25px;
     height: 25px;
     margin-right: 2px;
+}
+
+.create-account-button.disabled {
+    background-color: #5a595f; 
+    cursor: not-allowed;
+}
+
+.create-account-button:not(.disabled):hover {
+    background-color: #7166d4;
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+
+.create-account-button:not(.disabled):active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #7166d4;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.login-button.disabled {
+    background-color: #5a595f; 
+    cursor: not-allowed;
+}
+
+.login-button:not(.disabled):hover {
+    background-color: #5f52c8;
+    transform: scale(1.02);
+}
+
+.login-button:not(.disabled):active {
+    transform: scale(0.98);
+}
+
+.reset-password-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #7166d4;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.reset-password-button:hover {
+    background-color: #5f52c8;
+    transform: scale(1.02);
+}
+
+.reset-password-button:active {
+    transform: scale(0.98);
+}
+
+.reset-password-button.disabled {
+    background-color: #5a595f;
+    cursor: not-allowed;
+}
+
+.reset-password-button:not(.disabled) {
+    background-color: #7166d4;
 }
