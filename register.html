@@ -13,8 +13,12 @@
             const password = document.querySelector('input[type="password"]').value;
             const termsCheckbox = document.getElementById("terms-checkbox").checked;
             const submitButton = document.querySelector('.create-account-button');
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
+            const emailParts = email.split('@');
+            
+            const isValidEmail = emailPattern.test(email) && emailParts.length == 2 && emailParts[1].split('.')[1] && emailParts[1].split('.')[1].length >= 2;
 
-            if (firstName && lastName && email && password && termsCheckbox) {
+            if (firstName && lastName && email && password && termsCheckbox && isValidEmail) {
                 submitButton.disabled = false;
                 submitButton.classList.remove("disabled");
             } else {
