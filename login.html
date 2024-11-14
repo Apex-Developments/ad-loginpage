@@ -10,8 +10,12 @@
             const email = document.querySelector('input[type="email"]').value;
             const password = document.querySelector('input[type="password"]').value;
             const loginButton = document.querySelector('.login-button');
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const emailParts = email.split('@');
+            
+            const isValidEmail = emailPattern.test(email) && emailParts.length == 2 && emailParts[1].split('.')[1] && emailParts[1].split('.')[1].length >= 2;
 
-            if (email && password) {
+            if (email && password && isValidEmail) {
                 loginButton.disabled = false;
                 loginButton.classList.remove("disabled");
             } else {
