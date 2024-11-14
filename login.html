@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function checkLoginFormCompletion() {
+            const email = document.querySelector('input[type="email"]').value;
+            const password = document.querySelector('input[type="password"]').value;
+            const loginButton = document.querySelector('.login-button');
+
+            if (email && password) {
+                loginButton.disabled = false;
+                loginButton.classList.remove("disabled");
+            } else {
+                loginButton.disabled = true;
+                loginButton.classList.add("disabled");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container fade-in">
+        <div class="left-section">
+            <img src="assets/background-image.jpeg" alt="Background Image" class="background-image">
+            <div class="caption">
+                <h2>Example</h2>
+            </div>
+        </div>
+        <div class="right-section">
+            <h1>Log in to your account</h1>
+            <p>Don't have an account? <a href="register.html">Sign up</a></p>
+            <form oninput="checkLoginFormCompletion()">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Enter your password" required>
+                <button type="button" class="login-button disabled" disabled>Log in</button>
+            </form>
+            <p class="forgot-password" style="margin-top: 10px;">Forgot your password? <a href="reset-password.html">Reset it here</a></p>
+            <p class="or">Or log in with</p>
+            <div class="google-signup">
+                <button class="google-button">
+                    <img src="assets/google.png" alt="Google Logo" class="google-logo"> Log in with Google
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
