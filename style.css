@@ -12,6 +12,8 @@ body {
     min-height: 100vh;
     background-color: #3d3c42;
     color: #ffffff;
+    overflow: hidden;
+    position: relative;
 }
 
 .container {
@@ -291,3 +293,36 @@ a:hover {
 .reset-password-button:not(.disabled) {
     background-color: #7166d4;
 }
+
+.animated-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; 
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: rgba(139, 133, 245, 0.8); 
+    border-radius: 50%;
+    animation: floatUp 6s linear infinite;
+    opacity: 0;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
