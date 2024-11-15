@@ -15,7 +15,6 @@
             const submitButton = document.querySelector('.create-account-button');
             const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
             const emailParts = email.split('@');
-            
             const isValidEmail = emailPattern.test(email) && emailParts.length == 2 && emailParts[1].split('.')[1] && emailParts[1].split('.')[1].length >= 2;
 
             if (firstName && lastName && email && password && termsCheckbox && isValidEmail) {
@@ -26,8 +25,21 @@
                 submitButton.classList.add("disabled");
             }
         }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const background = document.createElement("div");
+            background.className = "animated-background";
+            document.body.appendChild(background);
+
+            for (let i = 0; i < 100; i++) {
+                const particle = document.createElement("div");
+                particle.className = "particle";
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.animationDelay = `${Math.random() * 6}s`;
+                background.appendChild(particle);
+            }
+        });
     </script>
-</head>
 <body>
     <div class="container fade-in">
         <div class="left-section">
