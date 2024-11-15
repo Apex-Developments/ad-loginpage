@@ -13,11 +13,12 @@ Inspired by [Usman A's design on Dribbble](https://dribbble.com/shots/24552589-L
 - "Sign in/up with Google" Button
 - Fade-in Animation on page load
 - Animated Checkbox for **Terms & Conditions**
-- Fully designed to match the theme
+- Theme Stays Constant
+- Animated background (particle)
 - Valid Email Check
-- Interactive Example of the design [here](https://apex-developments.github.io/ad-loginpage/login.html)
 
 ## Screenshots
+#### If you wish to preview the site we recommend you check out the [interactive example](https://apex-developments.github.io/ad-loginpage/login.html)
 
 ### Register Page:
 ![Screenshot from 2024-11-14 11-29-46](https://github.com/user-attachments/assets/3e3b34a6-3b0a-4dc0-ad2d-f843d9ec95ca)
