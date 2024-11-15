@@ -12,7 +12,6 @@
             const loginButton = document.querySelector('.login-button');
             const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             const emailParts = email.split('@');
-            
             const isValidEmail = emailPattern.test(email) && emailParts.length == 2 && emailParts[1].split('.')[1] && emailParts[1].split('.')[1].length >= 2;
 
             if (email && password && isValidEmail) {
@@ -23,6 +22,20 @@
                 loginButton.classList.add("disabled");
             }
         }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const background = document.createElement("div");
+            background.className = "animated-background";
+            document.body.appendChild(background);
+
+            for (let i = 0; i < 100; i++) {
+                const particle = document.createElement("div");
+                particle.className = "particle";
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.animationDelay = `${Math.random() * 6}s`;
+                background.appendChild(particle);
+            }
+        });
     </script>
 </head>
 <body>
