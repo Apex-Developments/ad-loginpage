@@ -6,18 +6,30 @@
     <title>Register</title>
     <link rel="stylesheet" href="style.css">
     <script>
+        function validateEmail() {
+            const email = document.querySelector('input[type="email"]');
+            const errorMessage = document.querySelector('.error-message');
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const isValidEmail = emailPattern.test(email.value);
+    
+            if (email.value && !isValidEmail) {
+                errorMessage.style.display = "block";
+            } else {
+                errorMessage.style.display = "none";
+            }
+        }
+    
         function checkFormCompletion() {
             const firstName = document.querySelector('input[placeholder="First Name"]').value;
             const lastName = document.querySelector('input[placeholder="Last Name"]').value;
-            const email = document.querySelector('input[type="email"]').value;
+            const email = document.querySelector('input[type="email"]');
             const password = document.querySelector('input[type="password"]').value;
             const termsCheckbox = document.getElementById("terms-checkbox").checked;
             const submitButton = document.querySelector('.create-account-button');
-            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
-            const emailParts = email.split('@');
-            const isValidEmail = emailPattern.test(email) && emailParts.length == 2 && emailParts[1].split('.')[1] && emailParts[1].split('.')[1].length >= 2;
-
-            if (firstName && lastName && email && password && termsCheckbox && isValidEmail) {
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const isValidEmail = emailPattern.test(email.value);
+    
+            if (firstName && lastName && email.value && password && termsCheckbox && isValidEmail) {
                 submitButton.disabled = false;
                 submitButton.classList.remove("disabled");
             } else {
@@ -25,12 +37,12 @@
                 submitButton.classList.add("disabled");
             }
         }
-
+    
         document.addEventListener("DOMContentLoaded", () => {
             const background = document.createElement("div");
             background.className = "animated-background";
             document.body.appendChild(background);
-
+    
             for (let i = 0; i < 100; i++) {
                 const particle = document.createElement("div");
                 particle.className = "particle";
@@ -39,7 +51,8 @@
                 background.appendChild(particle);
             }
         });
-    </script>
+    </script>    
+</head>
 <body>
     <div class="container fade-in">
         <div class="left-section">
@@ -56,8 +69,9 @@
                     <input type="text" placeholder="First Name" required>
                     <input type="text" placeholder="Last Name" required>
                 </div>
-                <input type="email" placeholder="Email" required>
+                <input type="email" placeholder="Email" required onblur="validateEmail()" oninput="validateEmail()">
                 <input type="password" placeholder="Password" required>
+                <div class="error-message" style="margin-top: -10px;">The email entered is invalid.</div>
                 <div class="terms">
                     <input type="checkbox" id="terms-checkbox" required>
                     <label for="terms-checkbox">I agree to the <a href="#">Terms & Conditions</a></label>
