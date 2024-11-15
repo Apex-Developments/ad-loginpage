@@ -50,8 +50,15 @@
                 particle.style.animationDelay = `${Math.random() * 6}s`;
                 background.appendChild(particle);
             }
+    
+            const emailInput = document.querySelector('input[type="email"]');
+            const errorMessage = document.querySelector('.error-message');
+            
+            errorMessage.style.display = "none";
+    
+            emailInput.addEventListener("input", validateEmail);
         });
-    </script>    
+    </script>     
 </head>
 <body>
     <div class="container fade-in">
